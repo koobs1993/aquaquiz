@@ -18,9 +18,7 @@
 .offer-layer__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(9, 31, 53, 0.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: transparent;
 }
 
 .offer-panel {

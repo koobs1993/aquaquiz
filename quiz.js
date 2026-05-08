@@ -24,6 +24,25 @@
   var upsellTimerId = null;
   var upsellEndTs = 0;
 
+  var CHECKOUT_TRY_AQUA =
+    "https://tryaqua.aquafunded.com/?add-to-cart=66";
+  var CHECKOUT_PAY_LATER =
+    "https://www.aquafunded.com/pay-later#get-funded";
+
+  function checkoutUrlForCta(action) {
+    switch (action) {
+      case "cta-unlock-dollar":
+      case "cta-try-dollar":
+        return CHECKOUT_TRY_AQUA;
+      case "cta-pay-later":
+      case "cta-pay-later-exp":
+      case "cta-upsell-accounts":
+        return CHECKOUT_PAY_LATER;
+      default:
+        return "";
+    }
+  }
+
   function clearFlowTimers() {
     flowTimers.forEach(function (id) {
       clearTimeout(id);
@@ -273,6 +292,8 @@
             },
           })
         );
+        var checkoutUrl = checkoutUrlForCta(ctaAction);
+        if (checkoutUrl) window.location.assign(checkoutUrl);
         return;
       }
     }
