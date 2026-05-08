@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trading quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="offer.css" />
+  </head>
+  <body>
+    <div class="quiz-root" id="quiz">
+      <div class="quiz-root__bg" aria-hidden="true">
+        <div class="quiz-root__bg-gradient"></div>
+        <div class="quiz-root__bg-pattern-wrap">
+          <img
+            class="quiz-root__bg-pattern"
+            src="assets/bg-pattern.png"
+            alt=""
+          />
+        </div>
+        <div class="quiz-root__bg-tint"></div>
+        <img
+          class="quiz-root__bg-lines"
+          src="assets/vector-bg.svg"
+          alt=""
+        />
+      </div>
+
+      <button type="button" class="btn-close" aria-label="Close">
+        <img src="assets/icon-close.svg" alt="" />
+      </button>
+
+      <div class="quiz-main" id="quiz-main">
+        <div class="quiz-stage">
+        <!-- Q1 -->
+        <article
+          class="quiz-step card is-active"
+          id="quiz-step-1"
+          data-step="1"
+          aria-labelledby="q1-heading"
+        >
+          <div class="card__decor">
+            <img src="assets/vector-q1.svg" alt="" />
+          </div>
+          <p class="card__q-label">Q1</p>
+          <div class="card__badge">
+            <img src="assets/icon-ranking.svg" alt="" />
+            <span>Experience level</span>
+          </div>
+          <h2 class="card__question" id="q1-heading">
+            <span class="accent">How Long</span> Have You Been Trading?
+          </h2>
+          <div class="card__options">
+            <label class="option">
+              <input
+                type="radio"
+                name="q1"
+                class="option__input"
+                value="never"
+                checked
+              />
+              <span class="option__text">I’ve never traded</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q1" class="option__input" value="lt6" />
+              <span class="option__text">Less than 6 months</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q1" class="option__input" value="6-12" />
+              <span class="option__text">6–12 months</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q1" class="option__input" value="1y" />
+              <span class="option__text">1+ year</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+          </div>
+          <footer class="card__footer">
+            <button type="button" class="btn btn--secondary" data-action="cancel">
+              Cancel
+            </button>
+            <button type="button" class="btn btn--primary" data-action="next">
+              Next
+            </button>
+          </footer>
+        </article>
+
+        <!-- Q2 -->
+        <article
+          class="quiz-step card"
+          id="quiz-step-2"
+          data-step="2"
+          hidden
+          aria-labelledby="q2-heading"
+        >
+          <div class="card__decor">
+            <img src="assets/vector-q1.svg" alt="" />
+          </div>
+          <p class="card__q-label">Q2</p>
+          <div class="card__badge">
+            <img src="assets/icon-coin.svg" alt="" />
+            <span>Capital situation</span>
+          </div>
+          <h2 class="card__question" id="q2-heading">
+            <span class="accent">How much</span> Capital are you Currently
+            Trading with?
+          </h2>
+          <div class="card__options">
+            <label class="option">
+              <input type="radio" name="q2" class="option__input" value="0" />
+              <span class="option__text">$0</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q2"
+                class="option__input"
+                value="1-1000"
+                checked
+              />
+              <span class="option__text">$1–$1,000</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q2" class="option__input" value="1k-10k" />
+              <span class="option__text">$1,000–$10,000</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q2" class="option__input" value="10k-plus" />
+              <span class="option__text">$10,000+</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+          </div>
+          <footer class="card__footer">
+            <button type="button" class="btn btn--secondary" data-action="back">
+              Back
+            </button>
+            <button type="button" class="btn btn--primary" data-action="next">
+              Next
+            </button>
+          </footer>
+        </article>
+
+        <!-- Q3 -->
+        <article
+          class="quiz-step card"
+          id="quiz-step-3"
+          data-step="3"
+          hidden
+          aria-labelledby="q3-heading"
+        >
+          <div class="card__decor">
+            <img src="assets/vector-q1.svg" alt="" />
+          </div>
+          <p class="card__q-label">Q3</p>
+          <div class="card__badge">
+            <img src="assets/icon-lock.svg" alt="" />
+            <span>Biggest blocker</span>
+          </div>
+          <h2 class="card__question" id="q3-heading">
+            What’s Your Biggest
+            <span class="accent">Challenge Right Now?</span>
+          </h2>
+          <div class="card__options">
+            <label class="option">
+              <input type="radio" name="q3" class="option__input" value="capital" />
+              <span class="option__text">I don’t have enough capital</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q3" class="option__input" value="consistent" />
+              <span class="option__text">I struggle with consistency</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q3"
+                class="option__input"
+                value="start"
+                checked
+              />
+              <span class="option__text">I don’t know where to start</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q3" class="option__input" value="funded-fail" />
+              <span class="option__text">I’ve passed challenges but failed funded</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+          </div>
+          <footer class="card__footer">
+            <button type="button" class="btn btn--secondary" data-action="back">
+              Back
+            </button>
+            <button type="button" class="btn btn--primary" data-action="next">
+              Next
+            </button>
+          </footer>
+        </article>
+
+        <!-- Q4 -->
+        <article
+          class="quiz-step card"
+          id="quiz-step-4"
+          data-step="4"
+          hidden
+          aria-labelledby="q4-heading"
+        >
+          <div class="card__decor">
+            <img src="assets/vector-q1.svg" alt="" />
+          </div>
+          <p class="card__q-label">Q4</p>
+          <div class="card__badge">
+            <img src="assets/icon-chart.svg" alt="" />
+            <span>Risk tolerance</span>
+          </div>
+          <h2 class="card__question" id="q4-heading">
+            <span class="accent">Have you Traded</span> with a Prop Firm before?
+          </h2>
+          <div class="card__options">
+            <label class="option">
+              <input type="radio" name="q4" class="option__input" value="none" />
+              <span class="option__text">Not at all</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q4" class="option__input" value="1-2" />
+              <span class="option__text">1-2 times</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q4"
+                class="option__input"
+                value="3-7"
+                checked
+              />
+              <span class="option__text">3-7 times</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q4" class="option__input" value="exp" />
+              <span class="option__text">I am an experienced prop trader</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+          </div>
+          <footer class="card__footer">
+            <button type="button" class="btn btn--secondary" data-action="back">
+              Back
+            </button>
+            <button type="button" class="btn btn--primary" data-action="next">
+              Next
+            </button>
+          </footer>
+        </article>
+
+        <!-- Q5 -->
+        <article
+          class="quiz-step card"
+          id="quiz-step-5"
+          data-step="5"
+          hidden
+          aria-labelledby="q5-heading"
+        >
+          <div class="card__decor">
+            <img src="assets/vector-q1.svg" alt="" />
+          </div>
+          <p class="card__q-label">Q5</p>
+          <div class="card__badge">
+            <img src="assets/icon-target.svg" alt="" />
+            <span>Trading Intent</span>
+          </div>
+          <h2 class="card__question" id="q5-heading">
+            <span class="accent">What are you Trying</span> to Achieve Right Now?
+          </h2>
+          <div class="card__options">
+            <label class="option">
+              <input type="radio" name="q5" class="option__input" value="learn" />
+              <span class="option__text">Learn trading</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q5" class="option__input" value="challenge" />
+              <span class="option__text">Pass a challenge</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q5" class="option__input" value="funded" />
+              <span class="option__text">Get funded</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+            <label class="option">
+              <input
+                type="radio"
+                name="q5"
+                class="option__input"
+                value="scale"
+                checked
+              />
+              <span class="option__text">Scale to bigger accounts</span>
+              <span class="option__radio" aria-hidden="true"></span>
+            </label>
+          </div>
+          <footer class="card__footer">
+            <button type="button" class="btn btn--secondary" data-action="back">
+              Back
+            </button>
+            <button type="button" class="btn btn--primary btn--wrap" data-action="finish">
+              Unlock my result
+            </button>
+          </footer>
+        </article>
+        </div>
+
+        <div class="progress" aria-hidden="true">
+          <span class="progress__seg progress__seg--active"></span>
+          <span class="progress__seg progress__seg--inactive"></span>
+          <span class="progress__seg progress__seg--inactive"></span>
+          <span class="progress__seg progress__seg--inactive"></span>
+          <span class="progress__seg progress__seg--inactive"></span>
+        </div>
+      </div>
+
+      <!-- Post-submit flow (Figma 155:1916 → 155:1938 → 155:1960) -->
+      <div class="quiz-flow-after" id="quiz-flow-after" hidden>
+        <section
+          class="flow-analyze flow-analyze--1"
+          id="flow-analyze-1"
+          hidden
+          aria-live="polite"
+          style="--flow-fill-target: 25%"
+        >
+          <div class="flow-analyze__hero">
+            <div class="flow-analyze__glow-wrap">
+              <img
+                class="flow-analyze__glow"
+                src="assets/analyzing-glow.png"
+                alt=""
+              />
+            </div>
+            <div class="flow-analyze__rings" aria-hidden="true">
+              <img
+                class="flow-analyze__ring flow-analyze__ring--outer"
+                src="assets/ring-outer.svg"
+                alt=""
+              />
+              <img
+                class="flow-analyze__ring flow-analyze__ring--inner"
+                src="assets/ring-inner.svg"
+                alt=""
+              />
+              <div class="flow-analyze__logo">
+                <img src="assets/logo-mark.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="flow-analyze__copy">
+            <h2 class="flow-analyze__title">Analyzing your answers...</h2>
+            <p class="flow-analyze__lead">
+              Evaluating your experience, risk profile, and trading goals.
+            </p>
+          </div>
+          <div class="flow-analyze__bottom">
+            <div class="flow-progress">
+              <div class="flow-progress__track">
+                <div class="flow-progress__fill"></div>
+              </div>
+              <span class="flow-progress__pct">37%</span>
+            </div>
+            <p class="flow-analyze__hint">
+              Reviewing your trading experience...
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="flow-analyze flow-analyze--2"
+          id="flow-analyze-2"
+          hidden
+          aria-live="polite"
+          style="--flow-fill-target: 85%"
+        >
+          <div class="flow-analyze__hero">
+            <div class="flow-analyze__glow-wrap">
+              <img
+                class="flow-analyze__glow"
+                src="assets/analyzing-glow.png"
+                alt=""
+              />
+            </div>
+            <div class="flow-analyze__rings" aria-hidden="true">
+              <img
+                class="flow-analyze__ring flow-analyze__ring--outer"
+                src="assets/ring-outer.svg"
+                alt=""
+              />
+              <img
+                class="flow-analyze__ring flow-analyze__ring--inner"
+                src="assets/ring-inner.svg"
+                alt=""
+              />
+              <div class="flow-analyze__logo">
+                <img src="assets/logo-mark.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="flow-analyze__copy">
+            <h2 class="flow-analyze__title">
+              Selecting your optimal funding path...
+            </h2>
+            <p class="flow-analyze__lead">
+              Matching you with the most suitable funding option based on your
+              answers.
+            </p>
+          </div>
+          <div class="flow-analyze__bottom">
+            <div class="flow-progress">
+              <div class="flow-progress__track">
+                <div class="flow-progress__fill"></div>
+              </div>
+              <span class="flow-progress__pct">88%</span>
+            </div>
+            <p class="flow-analyze__hint">Preparing your recommendation...</p>
+          </div>
+        </section>
+
+        <section class="flow-result" id="flow-result" hidden>
+          <div class="flow-result__intro">
+            <h2 class="flow-result__title">Your Result is Ready!</h2>
+            <p class="flow-result__lead">
+              We’ve selected the most suitable funding option based on your
+              answers.
+            </p>
+          </div>
+          <div class="flow-result__widget">
+            <div class="flow-result__glass" aria-hidden="true"></div>
+            <div class="flow-result__card">
+              <div class="flow-result__badge">Smart Risk Evaluation</div>
+              <div class="flow-result__mid">
+                <div class="flow-result__copy">
+                  <p>
+                    <span class="flow-result__muted">Based on your </span
+                    ><strong class="flow-result__strong">experience</strong
+                    ><span class="flow-result__muted">,</span>
+                  </p>
+                  <p>
+                    <strong class="flow-result__strong">capital</strong
+                    ><span class="flow-result__muted"> &amp; </span
+                    ><strong class="flow-result__strong">risk profile</strong>
+                  </p>
+                </div>
+                <div class="flow-result__visual">
+                  <img
+                    src="assets/result-product.png"
+                    alt=""
+                    class="flow-result__product"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="flow-result__cta"
+                data-action="view-result"
+              >
+                View Your Result
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Segment offers (Figma 155:1985, 155:3451, 155:2266, 155:2906) -->
+      <div id="offer-layer" class="offer-layer" hidden>
+        <div
+          class="offer-layer__backdrop"
+          data-action="offer-close"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          id="offer-beginner"
+          class="offer-panel offer-panel--beginner"
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="offer-beginner-title"
+        >
+          <button type="button" class="offer-panel__close" data-action="offer-close" aria-label="Close">
+            <img src="assets/icon-close-alt.svg" alt="" />
+          </button>
+          <div class="offer-panel__decor" aria-hidden="true">
+            <img src="assets/offer-vector-decor.svg" alt="" />
+          </div>
+          <div class="offer-panel__phones" aria-hidden="true">
+            <img src="assets/offer-phone-a.png" alt="" />
+          </div>
+          <div class="offer-panel__inner">
+            <div>
+              <div class="offer-tag">
+                <img src="assets/icon-verify.svg" alt="" />
+                Quiz Result
+              </div>
+              <h2 class="offer-headline" id="offer-beginner-title">
+                <span class="accent">Congratulations!</span><br />
+                You Qualify<br />
+                for a $1 Account!
+              </h2>
+              <div class="offer-body">
+                <p>
+                  <strong>You don’t need major capital</strong>
+                  or prior experience to begin.
+                </p>
+                <p>
+                  Based on your answers, the best first step is a
+                  <strong>low-risk entry into funded trading</strong>
+                  that lets
+                  <strong>you get started without putting serious money at risk.</strong>
+                </p>
+              </div>
+              <div class="offer-cta-row">
+                <button type="button" class="offer-btn offer-btn--primary offer-btn--large" data-action="cta-unlock-dollar">
+                  Unlock Your $1 Account
+                </button>
+              </div>
+            </div>
+            <div class="offer-matrix-wrap">
+              <div class="offer-matrix__highlight" aria-hidden="true"></div>
+              <div class="offer-matrix__row offer-matrix__row--head">
+                <span class="offer-matrix__cell"></span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Beginners</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Intermediate</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Experienced</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Entry Approach</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Low-risk entry point</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Start for $5</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Better fit for experienced traders</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Who it’s for</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Ideal for new traders</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Choose your account size</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Choose a larger account size</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">How it works</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Real funded account experience</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Prove yourself first</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Lower upfront risk</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Key benefit</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Great if you want to start without pressure</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Pay the rest only after you pass</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Scale your capital the smart way</span>
+              </div>
+            </div>
+          </div>
+          <div class="offer-panel__phones offer-panel__phones--b" aria-hidden="true">
+            <img src="assets/offer-phone-b.png" alt="" />
+          </div>
+        </div>
+
+        <div
+          id="offer-intermediate"
+          class="offer-panel offer-panel--intermediate"
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="offer-intermediate-title"
+        >
+          <button type="button" class="offer-panel__close" data-action="offer-close" aria-label="Close">
+            <img src="assets/icon-close-alt.svg" alt="" />
+          </button>
+          <div class="offer-panel__decor" aria-hidden="true">
+            <img src="assets/offer-vector-decor.svg" alt="" />
+          </div>
+          <div class="offer-panel__phones" aria-hidden="true">
+            <img src="assets/offer-phone-a.png" alt="" />
+          </div>
+          <div class="offer-panel__inner">
+            <div>
+              <div class="offer-tag">
+                <img src="assets/icon-verify.svg" alt="" />
+                Quiz Result
+              </div>
+              <h2 class="offer-headline" id="offer-intermediate-title">
+                <span class="accent">Your best fit:</span><br />
+                Start With Pay Later
+              </h2>
+              <div class="offer-body">
+                <p>
+                  <strong>You already have enough experience</strong>
+                  to move beyond the absolute beginner stage.
+                </p>
+                <p>
+                  Based on your profile, Pay Later gives you a smarter path:
+                  <strong>Pay $5, prove your skill first,</strong>
+                  then pay only after passing.
+                </p>
+              </div>
+            </div>
+            <div class="offer-matrix-wrap">
+              <div class="offer-matrix__highlight" aria-hidden="true"></div>
+              <div class="offer-matrix__row offer-matrix__row--head">
+                <span class="offer-matrix__cell"></span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Beginners</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-green">Intermediate</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Experienced</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Entry Approach</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Low-risk entry point</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-green">Start for $5</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Better fit for experienced traders</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Who it’s for</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Ideal for new traders</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-green">Choose your account size</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Choose a larger account size</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">How it works</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Real funded account experience</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-green">Prove yourself first</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Lower upfront risk</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Key benefit</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Great if you want to start without pressure</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-green">Pay the rest only after you pass</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Scale your capital the smart way</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 clamp(24px, 4vw, 48px) 40px; text-align: center">
+            <div class="offer-cta-row" style="justify-content: center">
+              <button type="button" class="offer-btn offer-btn--primary" data-action="cta-pay-later">
+                Start With Pay Later
+              </button>
+              <button type="button" class="offer-btn offer-btn--secondary" data-action="cta-try-dollar">
+                Try $1 Entry
+              </button>
+            </div>
+            <p class="offer-footnote">
+              Not fully confident yet?
+              <strong>You can still start with $1</strong>
+            </p>
+          </div>
+          <div class="offer-panel__phones offer-panel__phones--b" aria-hidden="true">
+            <img src="assets/offer-phone-b.png" alt="" />
+          </div>
+        </div>
+
+        <div
+          id="offer-experienced"
+          class="offer-panel offer-panel--experienced"
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="offer-experienced-title"
+        >
+          <button type="button" class="offer-panel__close" data-action="offer-close" aria-label="Close">
+            <img src="assets/icon-close-alt.svg" alt="" />
+          </button>
+          <div class="offer-panel__decor" aria-hidden="true">
+            <img src="assets/offer-vector-exp.svg" alt="" />
+          </div>
+          <p class="offer-panel__ribbon" aria-hidden="true">
+            You Seem to Already <strong>Be a Pro!</strong>
+          </p>
+          <img class="offer-panel__sparkle" src="assets/offer-sparkle.svg" alt="" aria-hidden="true" />
+          <div class="offer-panel__phones" aria-hidden="true">
+            <img src="assets/offer-phone-a.png" alt="" />
+          </div>
+          <div class="offer-panel__inner">
+            <div>
+              <div class="offer-tag">
+                <img src="assets/icon-verify.svg" alt="" />
+                Quiz Result
+              </div>
+              <h2 class="offer-headline" id="offer-experienced-title">
+                <span class="accent">Your best fit:</span><br />
+                <span class="bold">Pay Later or Scale Immediately</span>
+              </h2>
+              <div class="offer-body">
+                <p>
+                  You already seem experienced enough to pursue a more serious path.
+                  <strong>You can prove your edge first with Pay Later</strong>,
+                  or if you’re ready to move faster,
+                  <strong>unlock a limited 50% offer on larger accounts right now.</strong>
+                </p>
+              </div>
+            </div>
+            <div class="offer-matrix-wrap">
+              <div class="offer-matrix__highlight" aria-hidden="true"></div>
+              <div class="offer-matrix__row offer-matrix__row--head">
+                <span class="offer-matrix__cell"></span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Beginners</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Intermediate</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Experienced</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Entry Approach</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Low-risk entry point</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Start for $5</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Better fit for experienced traders</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Who it’s for</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Ideal for new traders</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Choose your account size</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Choose a larger account size</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">How it works</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Real funded account experience</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Prove yourself first</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Lower upfront risk</span>
+              </div>
+              <div class="offer-matrix__row">
+                <span class="offer-matrix__cell offer-matrix__cell--label">Key benefit</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Great if you want to start without pressure</span>
+                <span class="offer-matrix__cell offer-matrix__cell--muted">Pay the rest only after you pass</span>
+                <span class="offer-matrix__cell offer-matrix__cell--hi-blue">Scale your capital the smart way</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 clamp(24px, 4vw, 48px) 32px; text-align: center">
+            <div class="offer-cta-row" style="justify-content: center">
+              <button type="button" class="offer-btn offer-btn--primary" data-action="show-upsell">
+                <span style="font-weight: 500">Scale Immediately </span>
+                <strong>at 50% Off</strong>
+              </button>
+              <button type="button" class="offer-btn offer-btn--secondary" data-action="cta-pay-later-exp">
+                <span style="font-weight: 500">Start With Pay Later </span>
+                <strong>for $5</strong>
+              </button>
+            </div>
+            <p class="offer-footnote">
+              <strong>Only available for 15 minutes</strong>, it will disappear after you close this page.
+            </p>
+          </div>
+          <div class="offer-panel__bottom-photo" aria-hidden="true">
+            <img src="assets/offer-bottom-photo.png" alt="" />
+          </div>
+          <div class="offer-panel__phones offer-panel__phones--b" aria-hidden="true">
+            <img src="assets/offer-phone-b.png" alt="" />
+          </div>
+        </div>
+
+        <div
+          id="offer-upsell"
+          class="offer-panel offer-upsell"
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="offer-upsell-title"
+        >
+          <button type="button" class="offer-panel__close" data-action="offer-close-upsell" aria-label="Close">
+            <img src="assets/icon-close-alt.svg" alt="" />
+          </button>
+          <div class="offer-panel__decor" aria-hidden="true">
+            <img src="assets/offer-vector-exp.svg" alt="" />
+          </div>
+          <div class="offer-panel__bottom-photo" aria-hidden="true">
+            <img src="assets/offer-bottom-photo.png" alt="" />
+          </div>
+          <div class="offer-panel__inner">
+            <div class="offer-upsell-grid">
+              <div>
+                <div class="offer-tag">
+                  <img src="assets/icon-verify.svg" alt="" />
+                  Quiz Result
+                </div>
+                <h2 class="offer-headline" id="offer-upsell-title">
+                  <span class="accent">Private Offer Unlocked:</span><br />
+                  <strong>50% OFF</strong> Larger Accounts
+                </h2>
+                <div class="offer-body">
+                  <p>
+                    <strong>Ready to skip ahead?</strong>
+                    For the next 15 minutes, you can access
+                  </p>
+                  <p><strong>50% OFF larger account sizes.</strong></p>
+                </div>
+              </div>
+              <div class="offer-price-panel">
+                <div class="offer-price-panel__highlight" aria-hidden="true"></div>
+                <div class="offer-price-row offer-price-row--head">
+                  <span class="offer-matrix__cell--label">Available Funded Accounts</span>
+                  <span class="offer-matrix__cell--label" style="text-align: center">Standard<br />Price</span>
+                  <span class="offer-matrix__cell--hi-green" style="text-align: center">Your Exclusive<br />Price</span>
+                </div>
+                <div class="offer-price-row">
+                  <span><strong>$10,000</strong> <span style="color: rgba(9,31,53,.6); font-weight:500">accounts</span></span>
+                  <span class="strike-wrap">
+                    $299
+                    <img src="assets/offer-strike.svg" alt="" />
+                  </span>
+                  <span class="offer-matrix__cell--hi-green">~$149</span>
+                </div>
+                <div class="offer-price-row">
+                  <span><strong>$50,000</strong> <span style="color: rgba(9,31,53,.6); font-weight:500">accounts</span></span>
+                  <span class="strike-wrap">
+                    $499
+                    <img src="assets/offer-strike.svg" alt="" />
+                  </span>
+                  <span class="offer-matrix__cell--hi-green">~$249</span>
+                </div>
+                <div class="offer-price-row">
+                  <span><strong>$100,000</strong> <span style="color: rgba(9,31,53,.6); font-weight:500">accounts</span></span>
+                  <span class="strike-wrap">
+                    $999
+                    <img src="assets/offer-strike.svg" alt="" />
+                  </span>
+                  <span class="offer-matrix__cell--hi-green">~$499</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 24px">
+              <button type="button" class="offer-btn offer-btn--primary offer-btn--large" data-action="cta-upsell-accounts">
+                <span style="font-weight: 500">Choose Your Account Size </span>
+                <strong>At 50% OFF</strong>
+              </button>
+            </div>
+            <div class="offer-timer-bar">
+              <div class="offer-timer-bar__left">
+                <img src="assets/icon-clock.svg" alt="" />
+                <span>The private offer expires<strong> in 15 minutes.</strong></span>
+              </div>
+              <div class="offer-timer-bar__clock" id="offer-upsell-timer" aria-live="polite">14:59</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scoring.js"></script>
+    <script src="quiz.js"></script>
+  </body>
+</html>
