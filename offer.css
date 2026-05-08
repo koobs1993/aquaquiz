@@ -24,6 +24,7 @@
 .offer-panel {
   position: relative;
   z-index: 1;
+  isolation: isolate;
   width: min(1360px, 100%);
   max-height: min(92vh, 1500px);
   overflow: hidden auto;
@@ -42,6 +43,7 @@
   top: -464px;
   width: 2011px;
   height: 837px;
+  z-index: 0;
   pointer-events: none;
   opacity: 0.07;
 }
@@ -55,7 +57,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 10;
+  z-index: 20;
   width: 48px;
   height: 48px;
   border-radius: 60px;
@@ -74,6 +76,7 @@
 
 .offer-panel__inner {
   position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: minmax(280px, 440px) minmax(300px, 1fr);
   gap: clamp(16px, 3vw, 40px);
@@ -91,6 +94,7 @@
   right: clamp(320px, 38vw, 520px);
   top: 22px;
   width: min(302px, 28vw);
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -104,6 +108,7 @@
   top: 88px;
   right: clamp(280px, 36vw, 480px);
   width: min(265px, 24vw);
+  z-index: 0;
 }
 
 .offer-panel__phones img:last-child {
@@ -217,6 +222,11 @@
 }
 
 /* Comparison matrix */
+.offer-panel__post-inner {
+  position: relative;
+  z-index: 2;
+}
+
 .offer-matrix-wrap {
   position: relative;
   background: #f2f4f9;
@@ -274,11 +284,7 @@
   border-radius: 20px;
   pointer-events: none;
   border: 2px solid #007afe;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 122, 254, 0.12) 0%,
-    rgba(0, 122, 254, 0) 100%
-  );
+  background: transparent;
 }
 
 .offer-matrix__highlight--col2 {
@@ -304,11 +310,7 @@
 
 .offer-matrix__highlight--green {
   border-color: #00990a;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 153, 10, 0.08) 0%,
-    rgba(0, 153, 10, 0) 100%
-  );
+  background: transparent;
 }
 
 .offer-panel--beginner .offer-matrix__highlight {
@@ -320,11 +322,7 @@
   left: calc(12px + (100% - 24px) * 0.47);
   width: calc((100% - 24px) * 0.243);
   border-color: #00990a;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 153, 10, 0.08) 0%,
-    rgba(0, 153, 10, 0) 100%
-  );
+  background: transparent;
 }
 
 .offer-panel--experienced .offer-matrix__highlight {
@@ -336,6 +334,7 @@
   position: absolute;
   top: 48px;
   left: 710px;
+  z-index: 0;
   font-weight: 500;
   font-size: 32px;
   letter-spacing: -0.64px;
@@ -352,6 +351,7 @@
   right: -80px;
   width: min(1488px, 140%);
   height: 460px;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -367,6 +367,7 @@
   top: 20px;
   right: 120px;
   width: 33px;
+  z-index: 0;
 }
 
 /* Upsell pricing */
@@ -398,11 +399,7 @@
   height: calc(100% - 24px);
   border-radius: 20px;
   border: 2px solid #00990a;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 153, 10, 0.08) 0%,
-    rgba(0, 153, 10, 0) 100%
-  );
+  background: transparent;
   pointer-events: none;
 }
 
@@ -442,14 +439,8 @@
   justify-content: space-between;
   padding: 21px;
   border-radius: 24px;
-  border: 3px solid #007afe;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 122, 254, 0.22) 0%,
-      rgba(0, 122, 254, 0.04) 100%
-    ),
-    rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(50px);
+  border: 2px solid rgba(0, 122, 254, 0.35);
+  background: #f5f7fd;
 }
 
 .offer-timer-bar__left {
