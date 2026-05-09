@@ -43,6 +43,16 @@
     }
   }
 
+  /** Opens checkout in a new tab (works when quiz is embedded in an iframe). */
+  function openCheckoutUrl(url) {
+    var w = window.open(url, "_blank");
+    if (w) {
+      w.opener = null;
+      return;
+    }
+    window.location.assign(url);
+  }
+
   function clearFlowTimers() {
     flowTimers.forEach(function (id) {
       clearTimeout(id);
@@ -293,7 +303,7 @@
           })
         );
         var checkoutUrl = checkoutUrlForCta(ctaAction);
-        if (checkoutUrl) window.location.assign(checkoutUrl);
+        if (checkoutUrl) openCheckoutUrl(checkoutUrl);
         return;
       }
     }
