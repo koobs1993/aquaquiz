@@ -358,6 +358,10 @@ body {
   align-items: center;
   padding: 88px 24px 40px;
   overflow-y: auto;
+  background: linear-gradient(
+    rgb(0, 122, 254) 0%,
+    rgb(0, 73, 152) 133.41%
+  );
 }
 
 .quiz-flow-after[hidden] {
@@ -460,7 +464,7 @@ body {
   font-size: clamp(36px, 7vw, 76px);
   line-height: 1.05;
   letter-spacing: -1.52px;
-  color: var(--navy);
+  color: var(--white);
 }
 
 .flow-analyze__lead {
@@ -470,7 +474,7 @@ body {
   font-size: clamp(16px, 2.2vw, 20px);
   line-height: 24px;
   letter-spacing: -0.4px;
-  color: rgba(9, 31, 53, 0.72);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .flow-analyze__bottom {
@@ -496,8 +500,8 @@ body {
   flex: 1;
   height: 16px;
   border-radius: 100px;
-  background: rgba(9, 31, 53, 0.06);
-  border: 1px solid rgba(9, 31, 53, 0.08);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
   padding: 2px;
 }
@@ -524,7 +528,7 @@ body {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.36px;
-  color: var(--navy);
+  color: var(--white);
   flex-shrink: 0;
 }
 
@@ -534,7 +538,32 @@ body {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.32px;
-  color: rgba(9, 31, 53, 0.52);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Stronger than host-page h2/p styles when embedded (e.g. Webflow) */
+#quiz .flow-analyze__title {
+  color: #ffffff !important;
+}
+
+#quiz .flow-analyze__lead {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+#quiz .flow-progress__pct {
+  color: #ffffff !important;
+}
+
+#quiz .flow-analyze__hint {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+#quiz .flow-result__title {
+  color: #ffffff !important;
+}
+
+#quiz .flow-result__lead {
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
 .flow-result {
@@ -562,7 +591,7 @@ body {
   font-size: clamp(36px, 7vw, 76px);
   line-height: 1.05;
   letter-spacing: -1.52px;
-  color: var(--navy);
+  color: var(--white);
 }
 
 .flow-result__lead {
@@ -572,7 +601,7 @@ body {
   font-size: clamp(16px, 2.2vw, 20px);
   line-height: 24px;
   letter-spacing: -0.4px;
-  color: rgba(9, 31, 53, 0.72);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .flow-result__widget {
