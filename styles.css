@@ -319,16 +319,16 @@ body {
   padding-block: 10px;
 }
 
-/* —— Progress —— */
+/* —— Progress (below card; sits on host / canvas behind modal) —— */
 .progress {
-  position: absolute;
-  bottom: 82px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 28px;
   display: flex;
   gap: 4px;
   align-items: center;
-  z-index: 40;
+  justify-content: center;
+  z-index: 6;
 }
 
 .progress__seg {
@@ -339,12 +339,13 @@ body {
 
 .progress__seg--active {
   width: 40px;
-  background: var(--blue);
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(9, 31, 53, 0.12);
 }
 
 .progress__seg--inactive {
   width: 20px;
-  background: rgba(9, 31, 53, 0.14);
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* —— Post-submit flow (analyzing → result) —— */
@@ -762,6 +763,10 @@ body {
 
   .card__footer {
     bottom: 24px;
+  }
+
+  .progress {
+    margin-top: 22px;
   }
 
   .option__text {
